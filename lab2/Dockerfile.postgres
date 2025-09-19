@@ -8,15 +8,3 @@ ENV LANG=ru_RU.UTF-8 \
     LANGUAGE=ru_RU:ru \
     LC_ALL=ru_RU.UTF-8
 
-
-FROM python:3.12-slim
-
-WORKDIR /lab2
-
-COPY lab2/requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY lab2/lab2.py .
-
-CMD ["python", "lab2.py"]

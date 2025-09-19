@@ -1,6 +1,10 @@
+version: "3.9"
+
 services:
   postgres:
-    image: postgres:17
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
     container_name: postgres_db
     environment:
       POSTGRES_USER: postgres
@@ -10,9 +14,10 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-
   lab2:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.python
     container_name: lab2_service
     env_file:
       - ./config.env
