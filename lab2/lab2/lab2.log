@@ -1,0 +1,5 @@
+2025-09-19 15:28:33,071 [ERROR] connection failed: connection failed: connection to server at "172.18.0.2", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+2025-09-19 15:28:33,071 [INFO] retrying
+2025-09-19 15:28:38,092 [INFO] db version: PostgreSQL 17.6 (Debian 17.6-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2025-09-19 15:33:38,110 [INFO] db version: PostgreSQL 17.6 (Debian 17.6-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit

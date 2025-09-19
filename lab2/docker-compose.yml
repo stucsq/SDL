@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  lab2:
+    build: .
+    container_name: lab2_service
+    env_file:
+      - ./config.env
+    depends_on:
+      - postgres
+    volumes:
+      - ./lab2:/lab2
+
+volumes:
+  pgdata:
